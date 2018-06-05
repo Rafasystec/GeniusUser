@@ -6,4 +6,15 @@
 
     <string name="action_settings">Settings</string>
     <string name="myProfile">Meu perfil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_email">Seu e-mail</string>
+    <string name="your_name">Seu nome</string>
+    <string name="your_birth_date">Nascimento</string>
+    <string name="cantact_us">Contate-nos</string>
+    <string name="complaing">Reclame aqui</string>
+    <string name="configuration">Configurações</string>
+    <string name="my_galerry">Minhas fotos</string>
+    <string name="estimate">Orçamento</string>
 </resources>
