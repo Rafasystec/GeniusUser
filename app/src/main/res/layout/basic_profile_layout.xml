@@ -1,0 +1,141 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- For the name -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ivNameEdit"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_account_black" />
+
+        <EditText
+            android:id="@+id/etNameProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/ivNameEdit"
+            android:layout_toRightOf="@+id/ivNameEdit"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="@string/your_name"
+            android:inputType="textEmailAddress" />
+    </RelativeLayout>
+    <!-- For the email -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ivEmailEdit"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_at_black" />
+
+        <EditText
+            android:id="@+id/etEmailProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/ivEmailEdit"
+            android:layout_toRightOf="@+id/ivEmailEdit"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="@string/your_email"
+            android:inputType="textEmailAddress" />
+
+    </RelativeLayout>
+    <!-- For the birthdate -->
+    <TextView
+        android:id="@+id/tvBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ivBirthDate"
+        android:layout_toEndOf="@+id/ivBirthDate"
+        android:layout_toRightOf="@+id/ivBirthDate"
+        android:paddingLeft="5dp"
+        android:text="@string/your_birth_date" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ivBirthDate"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_calendar_check_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/ivBirthDate"
+            android:layout_toRightOf="@+id/ivBirthDate"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            >
+            <EditText
+                android:id="@+id/etBirthDateDay"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:inputType="number" />
+            <TextView
+                android:id="@+id/tvSlashDay"
+                android:layout_width="15dp"
+                android:layout_height="50dp"
+                android:text="/"
+                android:layout_toEndOf="@+id/etBirthDateDay"
+                android:layout_toRightOf="@+id/etBirthDateDay"
+                android:gravity="center"
+                android:textSize="18sp"
+                />
+            <EditText
+                android:id="@+id/etBirthDateMonth"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@+id/tvSlashDay"
+                android:layout_toRightOf="@+id/tvSlashDay"
+                android:inputType="number" />
+            <TextView
+                android:id="@+id/tvSlashMonth"
+                android:layout_width="15dp"
+                android:layout_height="50dp"
+                android:text="/"
+                android:layout_toEndOf="@+id/etBirthDateMonth"
+                android:layout_toRightOf="@+id/etBirthDateMonth"
+                android:gravity="center"
+                android:textSize="18sp"
+                />
+            <EditText
+                android:id="@+id/etBirthDateYear"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@+id/tvSlashMonth"
+                android:layout_toRightOf="@+id/tvSlashMonth"
+                android:inputType="number" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

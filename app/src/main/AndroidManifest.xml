@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ProfessionalActivity" />
-        <activity android:name=".activities.ClientActivity"></activity>
+        <activity android:name=".activities.ClientActivity" />
+        <activity android:name=".activities.FindProfessionalActivity"></activity>
     </application>
 
 </manifest>

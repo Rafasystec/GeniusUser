@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 def APIVersion = "27.1.1"
+ext.anko_version = '0.10.0'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -67,5 +68,6 @@ dependencies {
     //Picasso framework
     //-------------------------------------------------------------------------------
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
 }
