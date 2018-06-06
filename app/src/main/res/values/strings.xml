@@ -17,4 +17,15 @@
     <string name="configuration">Configurações</string>
     <string name="my_galerry">Minhas fotos</string>
     <string name="estimate">Orçamento</string>
+    <string name="addCriminalHistoric">Anexar Ficha corrida</string>
+    <string name="sexo">Sexo</string>
+    <string name="educationDegree">Grau de Escolaridade</string>
+    <string name="professionalArea">Área profissional</string>
+    <string name="payAttation">ATENÇÃO</string>
+    <string name="text_use_with_internet">Para uma melhor experiência e relacionamento com seu cliente, sempre mantenha sua Internet e GPS habilitados no dia em que for atendê-los.</string>
+    <string name="male">Masculino</string>
+    <string name="female">Feminio</string>
+    <string name="got_it">Entendi</string>
+    <string name="action_see_map">Ver no mapa</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

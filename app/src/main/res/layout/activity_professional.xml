@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
     tools:context="br.com.barcadero.geniususer.activities.ProfessionalActivity">
-
+    <fragment
+        android:id="@+id/fragmentProfessional"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="br.com.barcadero.geniususer.fragments.ProfessionalFragment"/>
 </android.support.constraint.ConstraintLayout>

@@ -27,10 +27,11 @@
             android:layout_height="match_parent"
             android:layout_toEndOf="@+id/ivNameEdit"
             android:layout_toRightOf="@+id/ivNameEdit"
-            android:clickable="false"
-            android:focusable="false"
+            android:clickable="true"
+            android:focusable="true"
             android:hint="@string/your_name"
-            android:inputType="textEmailAddress" />
+            android:maxLength="60"
+            />
     </RelativeLayout>
     <!-- For the email -->
     <RelativeLayout
@@ -70,6 +71,7 @@
         android:layout_toEndOf="@+id/ivBirthDate"
         android:layout_toRightOf="@+id/ivBirthDate"
         android:paddingLeft="5dp"
+        android:textStyle="bold"
         android:text="@string/your_birth_date" />
     <RelativeLayout
         android:layout_width="match_parent"
@@ -99,7 +101,7 @@
                 android:id="@+id/etBirthDateDay"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-
+                android:maxLength="2"
                 android:inputType="number" />
             <TextView
                 android:id="@+id/tvSlashDay"
@@ -117,6 +119,7 @@
                 android:layout_height="50dp"
                 android:layout_toEndOf="@+id/tvSlashDay"
                 android:layout_toRightOf="@+id/tvSlashDay"
+                android:maxLength="2"
                 android:inputType="number" />
             <TextView
                 android:id="@+id/tvSlashMonth"
@@ -134,8 +137,19 @@
                 android:layout_height="50dp"
                 android:layout_toEndOf="@+id/tvSlashMonth"
                 android:layout_toRightOf="@+id/tvSlashMonth"
+                android:maxLength="4"
                 android:inputType="number" />
         </LinearLayout>
 
     </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/sexo"/>
+    <Spinner
+        android:id="@+id/spSexoBasic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Spinner>
 </LinearLayout>

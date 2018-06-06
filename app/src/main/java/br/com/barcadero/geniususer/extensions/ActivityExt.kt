@@ -3,6 +3,7 @@ package br.com.transferr.extensions
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
@@ -11,6 +12,8 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import android.content.Context.INPUT_METHOD_SERVICE
+import android.view.inputmethod.InputMethodManager
 
 
 /**
@@ -63,4 +66,12 @@ fun Activity.showError(throwable: Throwable?) {
         message = throwable.message!!
     }
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+fun Activity.hideKeyBoard(){
+    val view = this.currentFocus
+    if (view != null) {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
 }

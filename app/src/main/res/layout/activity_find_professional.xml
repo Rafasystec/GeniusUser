@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     tools:context="br.com.barcadero.geniususer.activities.FindProfessionalActivity">
 
-    <fragment
+    <FrameLayout
         android:id="@+id/fragFindProfessional"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="br.com.barcadero.geniususer.fragments.FindProfessionalFragment"
         />
 
 </LinearLayout>

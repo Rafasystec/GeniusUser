@@ -13,7 +13,10 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.android.adapters.ProfessionalAdapter
+import br.com.barcadero.geniususer.model.enums.EnumProfessionalArea
 import br.com.barcadero.geniususer.model.responses.ProfessionalResponse
+import br.com.barcadero.geniususer.util.PutExtraKeys
+import br.com.transferr.extensions.log
 import kotlinx.android.synthetic.main.fragment_find_professional.*
 
 
@@ -24,14 +27,22 @@ class FindProfessionalFragment : BaseFragment(){
 
     var recycleView: RecyclerView?=null
     var professionals = listOf<ProfessionalResponse>()
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+    var professionalArea:EnumProfessionalArea?=null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
+        getArgumentsParameter()
         return inflater.inflate(R.layout.fragment_find_professional, container, false)
+    }
+
+    private fun getArgumentsParameter() {
+        var bundle = arguments
+        if (bundle != null) {
+            professionalArea = bundle?.get(PutExtraKeys.PROFESSIONAL_AREA) as EnumProfessionalArea
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        log("Professional area ${professionalArea?.ordinal}")
         recycleView = view.findViewById(R.id.rcFindProf)
         recycleView?.layoutManager = LinearLayoutManager(activity)
         recycleView?.itemAnimator = DefaultItemAnimator()

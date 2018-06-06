@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.activities.FindProfessionalActivity
+import br.com.barcadero.geniususer.model.enums.EnumProfessionalArea
+import br.com.barcadero.geniususer.util.PutExtraKeys
 import kotlinx.android.synthetic.main.fragment_choose_service_area.*
 
 
@@ -26,13 +28,23 @@ class ChooseServiceAreaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        cabinetmaker.setOnClickListener      { startFindBestProfessional()}
-        CVAirConditioning.setOnClickListener { startFindBestProfessional()}
+        cabinetmaker.setOnClickListener      { startFindBestProfessional(EnumProfessionalArea.WOODWORK)}
+        CVAirConditioning.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.AIR_CONDITIONING)}
+        cvCleaning.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.DIARIST)}
+        cvMasonry.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.MASONRY)}
+        CVElectrician.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.ELETRICAL)}
+        cvMechanics.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.MECHANICS)}
+        cvPainting.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.PAINTING)}
     }
 
-    private fun startFindBestProfessional(){
+    private fun startFindBestProfessional(professionalArea:EnumProfessionalArea){
+
         val intent = Intent(activity, FindProfessionalActivity::class.java)
+        var bundle = Bundle()
+        bundle.putSerializable(PutExtraKeys.PROFESSIONAL_AREA,professionalArea)
+        intent.putExtras(bundle)
         startActivity(intent)
+        //activity?.finish()
     }
 
 }// Required empty public constructor

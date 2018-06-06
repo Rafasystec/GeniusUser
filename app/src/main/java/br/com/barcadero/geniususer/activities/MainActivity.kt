@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.fragments.ChooseServiceAreaFragment
+import br.com.barcadero.geniususer.model.enums.EnumTypeUser
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -87,7 +88,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     private fun startProfileActivity(){
-        val intent = Intent(this,ClientActivity::class.java)
+        var typeUser = EnumTypeUser.PROFESSIONAL
+        val intent =
+        if(typeUser.equals(EnumTypeUser.CLIENT)) {
+            Intent(this, ClientActivity::class.java)
+        }else{
+            Intent(this, ProfessionalActivity::class.java)
+        }
         startActivity(intent)
     }
 
