@@ -29,4 +29,7 @@
     <string name="action_see_map">Ver no mapa</string>
     <string name="title_activity_maps">Map</string>
     <string name="agenda_visit">Agendar Visita</string>
+    <string name="chooseAgenda">Escolha um horário</string>
+    <string name="no">Não</string>
+    <string name="yes">Sim</string>
 </resources>

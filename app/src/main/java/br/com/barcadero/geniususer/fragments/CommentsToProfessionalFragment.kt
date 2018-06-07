@@ -1,6 +1,7 @@
 package br.com.barcadero.geniususer.fragments
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
@@ -9,9 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 
 import br.com.barcadero.geniususer.R
+import br.com.barcadero.geniususer.activities.SeeProfessionalAgendaActivity
 import br.com.barcadero.geniususer.android.adapters.ProfessionalCommentsAdapter
 import br.com.barcadero.geniususer.extensions.defaultRecycleView
+import br.com.barcadero.geniususer.extensions.showDialog
 import br.com.barcadero.geniususer.model.responses.CommentsProfessionalResponse
+import kotlinx.android.synthetic.main.fragment_comments_to_professional.*
 
 
 /**
@@ -34,7 +38,7 @@ class CommentsToProfessionalFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycleView = defaultRecycleView(view,R.id.rcProfessionalComments)
-
+        btnScheduleNow.setOnClickListener { startSchedulerActivity() }
     }
 
     private fun loadProfessionalComments() {
@@ -72,7 +76,12 @@ class CommentsToProfessionalFragment : BaseFragment() {
     }
 
     private fun onCommentClick(comment: CommentsProfessionalResponse){
+        showDialog(activity!!, comment.comment, comment.clientName)
+    }
 
+    fun startSchedulerActivity(){
+        var intent = Intent(activity,SeeProfessionalAgendaActivity::class.java)
+        startActivity(intent)
     }
 
 }// Required empty public constructor

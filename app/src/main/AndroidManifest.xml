@@ -55,7 +55,8 @@
         <activity
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".activities.CommentsToProfessionalActivity"></activity>
+        <activity android:name=".activities.CommentsToProfessionalActivity" />
+        <activity android:name=".activities.SeeProfessionalAgendaActivity"></activity>
     </application>
 
 </manifest>
