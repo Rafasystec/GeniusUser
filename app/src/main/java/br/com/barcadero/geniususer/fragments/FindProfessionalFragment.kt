@@ -1,6 +1,7 @@
 package br.com.barcadero.geniususer.fragments
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
@@ -12,7 +13,9 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import br.com.barcadero.geniususer.R
+import br.com.barcadero.geniususer.activities.CommentsToProfessionalActivity
 import br.com.barcadero.geniususer.android.adapters.ProfessionalAdapter
+import br.com.barcadero.geniususer.extensions.defaultRecycleView
 import br.com.barcadero.geniususer.model.enums.EnumProfessionalArea
 import br.com.barcadero.geniususer.model.responses.ProfessionalResponse
 import br.com.barcadero.geniususer.util.PutExtraKeys
@@ -43,10 +46,7 @@ class FindProfessionalFragment : BaseFragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         log("Professional area ${professionalArea?.ordinal}")
-        recycleView = view.findViewById(R.id.rcFindProf)
-        recycleView?.layoutManager = LinearLayoutManager(activity)
-        recycleView?.itemAnimator = DefaultItemAnimator()
-        recycleView?.setHasFixedSize(true)
+        recycleView = defaultRecycleView(view,R.id.rcFindProf)
         initView()
     }
 
@@ -92,7 +92,7 @@ class FindProfessionalFragment : BaseFragment(){
         professional5.value="R$ 200,00"
 
         this.professionals = listOf(professional,professional2,professional3,professional4,professional5)
-        this.recycleView?.adapter = ProfessionalAdapter(this.professionals,{professional: ProfessionalResponse -> toast("Clicou",activity!!)})
+        this.recycleView?.adapter = ProfessionalAdapter(this.professionals,{professional: ProfessionalResponse -> startCommentActivity()})
     }
 
     private fun initView(){
@@ -144,5 +144,10 @@ class FindProfessionalFragment : BaseFragment(){
             }
 
         }
+    }
+
+    fun startCommentActivity(){
+        var intent = Intent(activity,CommentsToProfessionalActivity::class.java)
+        startActivity(intent)
     }
 }// Required empty public constructor

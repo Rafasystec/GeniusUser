@@ -7,4 +7,11 @@
     <color name="blue">#08088A</color>
     <color name="red">#FF0040</color>
     <color name="icons">#DF01A5</color>
+    <color name="bootstrapAlertInfor">#d9edf7</color>
+    <color name="bootstrapAlertInforText">#31708f</color>
+    <color name="bootstrapAlertDanger">#f2dede</color>
+    <color name="bootstrapAlertDangerText">#a94442</color>
+    <color name="bootstrapButtonSuccess">#5cb85c</color>
+    <color name="bootstrapButtonSuccessText">#fff</color>
+
 </resources>

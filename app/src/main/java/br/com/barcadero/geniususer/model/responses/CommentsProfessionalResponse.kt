@@ -10,4 +10,5 @@ class CommentsProfessionalResponse {
     var idClient = 0L
     var commentDate = ""
     var clientName = ""
+    var like = true
 }

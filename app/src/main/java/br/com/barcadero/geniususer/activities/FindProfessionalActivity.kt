@@ -25,13 +25,15 @@ class FindProfessionalActivity : BaseActivity() {
     }
 
     private fun includeFragment(){
-        val fm = supportFragmentManager.beginTransaction()
-        val findProfessionalFragment = FindProfessionalFragment()
+
+        //val fm = supportFragmentManager.beginTransaction()
+        //val findProfessionalFragment = FindProfessionalFragment()
         val mArguments = Bundle()
         mArguments.putSerializable(PutExtraKeys.PROFESSIONAL_AREA,professionalArea)
-        findProfessionalFragment.arguments = mArguments
-        fm.add(R.id.fragFindProfessional,findProfessionalFragment,"Escolha um profissional")
-        fm.commit()
+        //findProfessionalFragment.arguments = mArguments
+        //fm.add(R.id.fragFindProfessional,findProfessionalFragment,"Escolha um profissional")
+        //fm.commit()
+        includeFragment(R.id.fragFindProfessional,FindProfessionalFragment(),mArguments)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
