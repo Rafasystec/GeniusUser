@@ -109,7 +109,7 @@ class FindProfessionalFragment : BaseFragment(){
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var value = position
+                //var value = position
                 //Put the position
             }
 
@@ -124,7 +124,7 @@ class FindProfessionalFragment : BaseFragment(){
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var value = position
+                //var value = position
                 //Put the position
             }
 
@@ -139,7 +139,7 @@ class FindProfessionalFragment : BaseFragment(){
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var value = position
+                //var value = position
                 //Put the position
             }
 

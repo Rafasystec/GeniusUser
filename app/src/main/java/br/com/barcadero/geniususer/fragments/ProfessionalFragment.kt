@@ -70,7 +70,7 @@ class ProfessionalFragment : BaseFragment() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var value = position
+                //var value = position
                 //Put the position
             }
 
@@ -85,7 +85,7 @@ class ProfessionalFragment : BaseFragment() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var value = position
+               // var value = position
                 //Put the position
             }
 
@@ -99,7 +99,7 @@ class ProfessionalFragment : BaseFragment() {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var value = position
+                //var value = position
                 //Put the position
             }
         }
@@ -117,7 +117,7 @@ class ProfessionalFragment : BaseFragment() {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var value = position
+                //var value = position
                 //Put the position
             }
         }
@@ -142,7 +142,7 @@ class ProfessionalFragment : BaseFragment() {
     fun hideSoftKeyboard() {
         if (activity?.currentFocus != null) {
             val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager!!.hideSoftInputFromWindow(activity?.currentFocus!!.windowToken, 0)
+            inputMethodManager.hideSoftInputFromWindow(activity?.currentFocus!!.windowToken, 0)
         }
     }
 

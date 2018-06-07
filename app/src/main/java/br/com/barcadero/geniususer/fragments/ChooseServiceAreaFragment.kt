@@ -31,7 +31,7 @@ class ChooseServiceAreaFragment : Fragment() {
         cabinetmaker.setOnClickListener      { startFindBestProfessional(EnumProfessionalArea.WOODWORK)}
         CVAirConditioning.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.AIR_CONDITIONING)}
         cvCleaning.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.DIARIST)}
-        cvMasonry.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.MASONRY)}
+        cvMasonry.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.BRICKWORK)}
         CVElectrician.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.ELETRICAL)}
         cvMechanics.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.MECHANICS)}
         cvPainting.setOnClickListener { startFindBestProfessional(EnumProfessionalArea.PAINTING)}
