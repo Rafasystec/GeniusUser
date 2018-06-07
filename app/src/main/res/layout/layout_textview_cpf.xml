@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutCpf"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="CPF:"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        >
+<!--
+        <ImageView
+            android:id="@+id/ivCreditCardName"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/account_card_details" />
+        -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_toEndOf="@+id/ivCreditCardName"
+            android:layout_toRightOf="@+id/ivCreditCardName"
+            android:layout_marginLeft="16dp"
+            >
+
+            <EditText
+                android:id="@+id/etCpfPart1"
+                android:layout_width="40sp"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:maxLength="3"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/etCpfPart2"
+                android:layout_width="40sp"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:maxLength="3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/etCpfPart3"
+                android:layout_width="40sp"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:maxLength="3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="-"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/etCpfPartDg"
+                android:layout_width="40sp"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:maxLength="2"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
