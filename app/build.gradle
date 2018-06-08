@@ -75,5 +75,14 @@ dependencies {
     //For show case framework
     //-------------------------------------------------------------------------------
     implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
+    //-------------------------------------------------------------------------------
+    //For QR code integration
+    //-------------------------------------------------------------------------------
+    // https://mvnrepository.com/artifact/com.google.zxing/core
+    implementation group: 'com.google.zxing', name: 'core', version: '3.3.3'
+    // https://mvnrepository.com/artifact/com.journeyapps/zxing-android-embedded
+    implementation group: 'com.journeyapps', name: 'zxing-android-embedded', version: '3.6.0'
+    //-------------------------------------------------------------------------------
+
 
 }

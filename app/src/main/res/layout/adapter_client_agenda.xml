@@ -25,26 +25,62 @@
         android:orientation="horizontal"
         >
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAgendaClient"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="8dp" />
+
         <TextView
-            android:id="@+id/tvAgendaHour"
+            android:id="@+id/tvAgendaClientProfName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:text="00:00"
-            android:layout_marginLeft="20dp"
-            android:textSize="40sp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/ivAgendaClient"
+            android:text="Professional Name"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvVancat"
-            android:layout_width="100dp"
+            android:id="@+id/tvClientAgendaDate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tvAgendaHour"
-            android:layout_alignBottom="@+id/tvAgendaHour"
+            android:layout_alignStart="@+id/tvAgendaClientProfName"
+            android:layout_below="@+id/tvAgendaClientProfName"
+            android:text="05/06/2018 18:00" />
+
+        <TextView
+            android:id="@+id/tvClientAgendaStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tvClientAgendaDate"
+            android:layout_alignBottom="@+id/tvClientAgendaDate"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="14dp"
-            android:text="OCUPADO" />
+            android:text="status" />
+
+        <TextView
+            android:id="@+id/tvClientAgendaAdvice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/tvClientAgendaDate"
+            android:layout_marginBottom="13dp"
+            android:textColor="@android:color/holo_red_light"
+            android:text="Clique para aqui para ver detalhes" />
+
+        <ImageView
+            android:id="@+id/ivAgendaClientAdapterOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tvClientAgendaStatus"
+            android:layout_alignTop="@+id/tvClientAgendaAdvice"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/check_circle" />
+
 
     </RelativeLayout>
 

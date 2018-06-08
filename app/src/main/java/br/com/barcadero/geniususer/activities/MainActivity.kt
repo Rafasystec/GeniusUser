@@ -70,8 +70,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 // Handle the camera action
                 startProfileActivity()
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_my_agenda -> {
+                startMyAgendaClientActivity()
             }
             R.id.nav_slideshow -> {
 
@@ -83,7 +83,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
             }
             R.id.nav_send -> {
-
+                startReadQRCodeActivity()
             }
         }
 
@@ -111,6 +111,16 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     private fun startContactUsActivity(){
         val intent = Intent(this,ContactActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startMyAgendaClientActivity(){
+        val intent = Intent(this,ClientAgendaActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startReadQRCodeActivity(){
+        var intent = Intent(this,ReadQRCodeActivity::class.java)
         startActivity(intent)
     }
 

@@ -32,4 +32,6 @@
     <string name="chooseAgenda">Escolha um horário</string>
     <string name="no">Não</string>
     <string name="yes">Sim</string>
+    <string name="my_agenda">Minha Agenda</string>
+    <string name="readQrCode">Ler QR-Code</string>
 </resources>

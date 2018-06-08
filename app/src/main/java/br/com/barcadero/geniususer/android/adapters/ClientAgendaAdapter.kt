@@ -1,18 +1,17 @@
 package br.com.barcadero.geniususer.android.adapters
 
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.model.ProfessionalAgenda
 import br.com.barcadero.geniususer.model.responses.ClientAgendaResponse
+import com.squareup.picasso.Picasso
 
 /**
- * Created by idoctor on 05/06/2018.
+ * Created by Rafael Rocha on 05/06/2018.
  */
 class ClientAgendaAdapter(
         val agendas: List<ClientAgendaResponse>,
@@ -21,14 +20,24 @@ class ClientAgendaAdapter(
     override fun onBindViewHolder(holder: ProfessionalViewHolder, position: Int) {
         val context = holder.itemView.context
         val agenda  = agendas[position]
-        //holder.tvAgendaHour.text = agenda.hour
-        //if(agenda.isBusy) {
-        //    holder.tvVancat.text = "OCUPADO"
-        //    holder.cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.bootstrapAlertDanger))
-        //}else{
-        //holder.tvVancat.text = "LIVRE"
-        //    //holder.cardView.setCardBackgroundColor(ContextCompat.getColor(context,R.color.bootstrapAlertInfor))
-        //}
+        holder.tvAgendaClientProfName.text  = agenda.professionalName
+        holder.tvClientAgendaStatus.text    = agenda.status
+        //Start progressBar
+        //holder.progress.visibility = View.Visible
+        if(agenda.confirmed){
+            holder.ivAgendaClientAdapterOk.visibility = View.VISIBLE
+        }else{
+            holder.ivAgendaClientAdapterOk.visibility = View.GONE
+        }
+        Picasso.with(context).load(agenda.professionalPhotoUrl).fit().into(holder.ivAgendaClient,
+                object : com.squareup.picasso.Callback{
+                    override fun onSuccess() {
+                        //Stop progress bar
+                    }
+                    override fun onError() {
+                        //Stop progress bar
+                    }
+                })
         holder.itemView.setOnClickListener { onClick(agenda) }
     }
 
@@ -44,13 +53,15 @@ class ClientAgendaAdapter(
 
 
     class ProfessionalViewHolder(view: View): RecyclerView.ViewHolder(view){
-        var tvAgendaHour    : TextView
-        var tvVancat   : TextView
-        var cardView: CardView
+        var ivAgendaClient: ImageView
+        var ivAgendaClientAdapterOk: ImageView
+        var tvAgendaClientProfName : TextView
+        var tvClientAgendaStatus : TextView
         init {
-            tvAgendaHour= view.findViewById(R.id.tvAgendaHour)
-            tvVancat    = view.findViewById(R.id.tvVancat)
-            cardView    = view.findViewById(R.id.cvSeeAgenda)
+            ivAgendaClient          = view.findViewById(R.id.ivAgendaClient)
+            tvAgendaClientProfName  = view.findViewById(R.id.tvAgendaClientProfName)
+            tvClientAgendaStatus    = view.findViewById(R.id.tvClientAgendaStatus)
+            ivAgendaClientAdapterOk= view.findViewById(R.id.ivAgendaClientAdapterOk)
         }
     }
 }

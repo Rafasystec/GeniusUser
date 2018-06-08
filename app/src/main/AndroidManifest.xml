@@ -57,7 +57,10 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".activities.CommentsToProfessionalActivity" />
         <activity android:name=".activities.SeeProfessionalAgendaActivity" />
-        <activity android:name=".activities.ContactActivity"></activity>
+        <activity android:name=".activities.ContactActivity" />
+        <activity android:name=".activities.ClientAgendaActivity" />
+        <activity android:name=".activities.ClientAgendaDetailsActivity" />
+        <activity android:name=".activities.ReadQRCodeActivity"></activity>
     </application>
 
 </manifest>
