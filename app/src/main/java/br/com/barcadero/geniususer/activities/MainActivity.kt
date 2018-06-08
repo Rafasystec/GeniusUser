@@ -13,11 +13,13 @@ import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.fragments.ChooseServiceAreaFragment
 import br.com.barcadero.geniususer.model.enums.EnumTypeUser
 import br.com.transferr.extensions.toast
+import br.com.transferr.util.Prefes
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    var typeUser = EnumTypeUser.PROFESSIONAL
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,6 +39,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         nav_view.setNavigationItemSelectedListener(this)
         includeFragment()
+        Prefes.prefsTypeUser = EnumTypeUser.CLIENT
+        typeUser = Prefes.prefsTypeUser
     }
 
     override fun onBackPressed() {
@@ -64,14 +68,16 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_profile -> {
-                // Handle the camera action
                 startProfileActivity()
             }
             R.id.nav_my_agenda -> {
-                startMyAgendaClientActivity()
+                if(typeUser.equals(EnumTypeUser.CLIENT)) {
+                    startMyAgendaClientActivity()
+                }else{
+                    startMyAgendaProfessionalActivity()
+                }
             }
             R.id.nav_slideshow -> {
 
@@ -121,6 +127,11 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     private fun startReadQRCodeActivity(){
         var intent = Intent(this,ReadQRCodeActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startMyAgendaProfessionalActivity(){
+        val intent = Intent(this,ProfessionalAgendaActivity::class.java)
         startActivity(intent)
     }
 

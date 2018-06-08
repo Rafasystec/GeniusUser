@@ -10,6 +10,7 @@ class ClientAgendaResponse {
     var clientName= ""
     var professionalName = ""
     var professionalPhotoUrl = ""
+    var clientPhotoUrl = ""
     var status = ""
     var agendaDate=""
     var confirmed=false

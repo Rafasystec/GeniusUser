@@ -2,6 +2,10 @@ package br.com.transferr.util
 
 import android.content.SharedPreferences
 import br.com.barcadero.geniususer.application.SystemApplication
+import br.com.barcadero.geniususer.model.enums.EnumTypeUser
+import br.com.transferr.extensions.fromJson
+import br.com.transferr.extensions.toJson
+
 //import br.com.transferr.application.ApplicationTransferr
 //import br.com.transferr.extensions.fromJson
 //import br.com.transferr.extensions.toJson
@@ -16,6 +20,7 @@ object Prefes {
     val ID_USER          = "br.com.transferr.user.id"
     val ID_CAR           = "br.com.transferr.car.id"
     val ID_CAR_JSON      = "br.com.transferr.car.id.json"
+    val TYPE_USER        = "br.com.barcadero.typeuser"
 
     private fun prefs() : SharedPreferences{
         val contex = SystemApplication.getInstance().applicationContext
@@ -30,6 +35,9 @@ object Prefes {
     var prefsCar: Long
         get() = prefs().getLong(ID_CAR,0L)
         set(value) = prefs().edit().putLong(ID_CAR, value).apply()
+    var prefsTypeUser: EnumTypeUser
+        get() = fromJson(prefs().getString(TYPE_USER,""))
+        set(enumType) = prefs().edit().putString(TYPE_USER,enumType.toJson()).apply()
    /*
     var prefsCarJSON: Car
         get() = fromJson(prefs().getString(ID_CAR_JSON,""))

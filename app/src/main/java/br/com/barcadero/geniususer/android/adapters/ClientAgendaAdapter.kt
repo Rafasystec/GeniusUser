@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.barcadero.geniususer.R
+import br.com.barcadero.geniususer.model.enums.EnumTypeUser
 import br.com.barcadero.geniususer.model.responses.ClientAgendaResponse
+import br.com.transferr.util.Prefes
 import com.squareup.picasso.Picasso
 
 /**
@@ -17,23 +19,34 @@ class ClientAgendaAdapter(
         val agendas: List<ClientAgendaResponse>,
         val onClick: (ClientAgendaResponse) -> Unit) : RecyclerView.Adapter<ClientAgendaAdapter.ProfessionalViewHolder>(){
 
+    val typeUser = Prefes.prefsTypeUser
     override fun onBindViewHolder(holder: ProfessionalViewHolder, position: Int) {
         val context = holder.itemView.context
         val agenda  = agendas[position]
-        holder.tvAgendaClientProfName.text  = agenda.professionalName
-        holder.tvClientAgendaStatus.text    = agenda.status
+        var name: String
+        var urlPhoto: String
+        if(typeUser == EnumTypeUser.PROFESSIONAL) {
+            name = agenda.clientName
+            urlPhoto = agenda.clientPhotoUrl
+        }else{
+            name = agenda.professionalName
+            urlPhoto = agenda.professionalPhotoUrl
+        }
+        holder.tvAgendaClientProfName.text = name
+        holder.tvClientAgendaStatus.text = agenda.status
         //Start progressBar
         //holder.progress.visibility = View.Visible
-        if(agenda.confirmed){
+        if (agenda.confirmed) {
             holder.ivAgendaClientAdapterOk.visibility = View.VISIBLE
-        }else{
+        } else {
             holder.ivAgendaClientAdapterOk.visibility = View.GONE
         }
-        Picasso.with(context).load(agenda.professionalPhotoUrl).fit().into(holder.ivAgendaClient,
-                object : com.squareup.picasso.Callback{
+        Picasso.with(context).load(urlPhoto).fit().into(holder.ivAgendaClient,
+                object : com.squareup.picasso.Callback {
                     override fun onSuccess() {
                         //Stop progress bar
                     }
+
                     override fun onError() {
                         //Stop progress bar
                     }

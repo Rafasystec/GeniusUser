@@ -6,6 +6,7 @@ import br.com.barcadero.geniususer.R
 import com.google.zxing.WriterException
 import android.graphics.Bitmap
 import android.widget.ImageView
+import br.com.barcadero.geniususer.extensions.encodeStringAsQrCode
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.common.BitMatrix
@@ -14,17 +15,19 @@ import com.google.zxing.common.BitMatrix
 
 class ClientAgendaDetailsActivity : AppCompatActivity() {
 
+    /*
     val WHITE = -0x1
     val BLACK = -0x1000000
     val WIDTH = 400
     val HEIGHT = 400
-    val STR = "A string to be encoded as QR code"
+    */
+    //val STR = "A string to be encoded as QR code"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_client_agenda_details)
         val imageView = findViewById<ImageView>(R.id.ivQrCode)
         try {
-            val bitmap = encodeAsBitmap(STR)
+            val bitmap = encodeStringAsQrCode("Apenas para ver como é gerada uma informação muito grande em QR code")
             imageView.setImageBitmap(bitmap)
         } catch (e: WriterException) {
             e.printStackTrace()
@@ -45,7 +48,7 @@ class ClientAgendaDetailsActivity : AppCompatActivity() {
         }
         */
     }
-
+/*
     @Throws(WriterException::class)
     fun encodeAsBitmap(str: String): Bitmap? {
         val result: BitMatrix
@@ -70,6 +73,7 @@ class ClientAgendaDetailsActivity : AppCompatActivity() {
         bitmap.setPixels(pixels, 0, width, 0, 0, width, height)
         return bitmap
     }
+    */
 /*
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         var result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
