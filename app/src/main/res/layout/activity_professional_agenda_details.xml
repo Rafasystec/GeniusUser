@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context="br.com.barcadero.geniususer.activities.ProfessionalAgendaDetailsActivity">
 
+    <include layout="@layout/activity_professional_agenda_details_header" />
+    <include android:id="@+id/viewPaymentConfirmed" layout="@layout/view_payment_done"/>
     <TextView
         android:id="@+id/tvReadQrCodeResultProf"
         android:layout_width="match_parent"

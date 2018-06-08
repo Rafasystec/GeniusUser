@@ -2,10 +2,12 @@ package br.com.barcadero.geniususer.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.extensions.toast
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_professional_agenda_details.*
+import kotlinx.android.synthetic.main.activity_professional_agenda_details_header.*
 
 class ProfessionalAgendaDetailsActivity : BaseActivity() {
 
@@ -13,6 +15,7 @@ class ProfessionalAgendaDetailsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_professional_agenda_details)
         setOnClickReadQrCode()
+        initView()
     }
 
     fun setOnClickReadQrCode(){
@@ -38,9 +41,27 @@ class ProfessionalAgendaDetailsActivity : BaseActivity() {
             }else{
                 toast("Scaned ${result.contents}",this)
                 tvReadQrCodeResultProf.text = result.contents
+                validatePayment()
             }
         }else {
             super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+    private fun validatePayment(){
+        tvProfessionalAgendaStatus.text = "Pagamento Efetuado"
+        enableProof(true)
+    }
+
+    private fun initView(){
+        enableProof(false)
+    }
+
+    private fun enableProof(enable:Boolean){
+        if(enable){
+            viewPaymentConfirmed.visibility = View.VISIBLE
+        }else{
+            viewPaymentConfirmed.visibility = View.GONE
         }
     }
 }

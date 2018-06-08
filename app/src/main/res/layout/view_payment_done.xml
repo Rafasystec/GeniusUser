@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/cvProfComment"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:padding="5dp"
+    android:background="@color/cardview_light_background"
+    android:layout_marginBottom="5dp"
+    app:cardElevation="3dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="false"
+    card_view:cardConerRadius="2dp"
+    card_view:cardElevation="6dp"
+    android:layout_margin="3dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/tvPaymentNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número autorização: 7584766985455655"
+            android:layout_marginLeft="5dp"
+            />
+        <TextView
+            android:id="@+id/tvPaymentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data: 05/06/2018 as 20:30"
+            android:layout_below="@id/tvPaymentNumber"
+            android:layout_marginLeft="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagamento efetuado com sucesso"
+            android:layout_below="@id/tvPaymentDate"
+            android:layout_marginLeft="5dp"
+            />
+    </RelativeLayout>
+
+
+
+
+</android.support.v7.widget.CardView>

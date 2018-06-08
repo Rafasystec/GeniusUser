@@ -39,7 +39,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         nav_view.setNavigationItemSelectedListener(this)
         includeFragment()
-        Prefes.prefsTypeUser = EnumTypeUser.CLIENT
+        Prefes.prefsTypeUser = EnumTypeUser.PROFESSIONAL
         typeUser = Prefes.prefsTypeUser
     }
 
