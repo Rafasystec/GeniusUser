@@ -18,22 +18,18 @@
         android:required="true" />
 
     <application
+        android:name=".application.SystemApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/team_256"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".application.SystemApplication"
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activities.ProfessionalActivity" />
         <activity android:name=".activities.ClientActivity" />
@@ -63,7 +59,20 @@
         <activity android:name=".activities.ClientAgendaDetailsActivity" />
         <activity android:name=".activities.ReadQRCodeActivity" />
         <activity android:name=".activities.ProfessionalAgendaActivity" />
-        <activity android:name=".activities.ProfessionalAgendaDetailsActivity"></activity>
+        <activity android:name=".activities.ProfessionalAgendaDetailsActivity" />
+        <activity android:name=".activities.MainProfessionalActivity" />
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".activities.SplashActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".activities.MainDecisionActivity"/>
     </application>
 
 </manifest>

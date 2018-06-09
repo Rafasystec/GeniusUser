@@ -34,4 +34,8 @@
     <string name="yes">Sim</string>
     <string name="my_agenda">Minha Agenda</string>
     <string name="readQrCode">Ler QR-Code</string>
+    <string name="home">Início</string>
+    <string name="historic">Histórico</string>
+    <string name="works">Trabalhos</string>
+    <string name="more">Mais</string>
 </resources>

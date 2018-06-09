@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+     android:layout_height="wrap_content" android:layout_width="match_parent"
+    android:orientation="vertical">
+
+
+
+
+    <!-- Primeiro iem de menu -->
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardViewMenuEdtProfile"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:id="@+id/relativeMenuEdtProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <ImageView
+                android:id="@+id/ivItem2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/businessman_128" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivItem2"
+                android:layout_toEndOf="@+id/ivItem2"
+                android:layout_toRightOf="@+id/ivItem2"
+                android:padding="5dp"
+                android:text="Perfil" />
+            <ImageView
+                android:id="@+id/imageAttendances"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_right" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <!-- Primeiro iem de menu -->
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardViewMenuAttendances"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:id="@+id/relativeMenuAttendances"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <ImageView
+                android:id="@+id/ivItem3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/businessman_128" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivItem3"
+                android:layout_toEndOf="@+id/ivItem3"
+                android:layout_toRightOf="@+id/ivItem3"
+                android:padding="5dp"
+                android:text="Item 2" />
+            <ImageView
+                android:id="@+id/ivMenuAttendance"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_right" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardViewMenuIsAProfessional"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:id="@+id/relativeMenuIsAProfessional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <ImageView
+                android:id="@+id/ivItem4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/businessman_128" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivItem4"
+                android:layout_toEndOf="@+id/ivItem4"
+                android:layout_toRightOf="@+id/ivItem4"
+                android:padding="5dp"
+
+                android:text="Item 3" />
+            <ImageView
+                android:id="@+id/ivIsAProfessional"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_right" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardViewMenuConfiguration"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:id="@+id/relativeMenuConfiguration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <ImageView
+                android:id="@+id/ivItem5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/businessman_128" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivItem5"
+                android:layout_toEndOf="@+id/ivItem5"
+                android:layout_toRightOf="@+id/ivItem5"
+                android:padding="5dp"
+
+                android:text="Item 4" />
+            <ImageView
+                android:id="@+id/ivMenuConfigurations"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_right" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardViewMenuLogOut"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardBackgroundColor="@color/bootstrapAlertDanger"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:id="@+id/relativeMenuLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <ImageView
+                android:id="@+id/ivItem6"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/logout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivItem6"
+                android:layout_toEndOf="@+id/ivItem6"
+                android:layout_toRightOf="@+id/ivItem6"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/bootstrapAlertDangerText"
+                android:text="Sair" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

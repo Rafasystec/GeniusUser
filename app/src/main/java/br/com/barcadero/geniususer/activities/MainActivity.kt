@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    var typeUser = EnumTypeUser.PROFESSIONAL
+    //var typeUser = EnumTypeUser.PROFESSIONAL
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,8 +39,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         nav_view.setNavigationItemSelectedListener(this)
         includeFragment()
-        Prefes.prefsTypeUser = EnumTypeUser.PROFESSIONAL
-        typeUser = Prefes.prefsTypeUser
+        //Prefes.prefsTypeUser = EnumTypeUser.PROFESSIONAL
+        //typeUser = Prefes.prefsTypeUser
     }
 
     override fun onBackPressed() {
@@ -73,11 +73,11 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 startProfileActivity()
             }
             R.id.nav_my_agenda -> {
-                if(typeUser.equals(EnumTypeUser.CLIENT)) {
+                //if(typeUser.equals(EnumTypeUser.CLIENT)) {
                     startMyAgendaClientActivity()
-                }else{
-                    startMyAgendaProfessionalActivity()
-                }
+                //}else{
+                //    startMyAgendaProfessionalActivity()
+                //}
             }
             R.id.nav_slideshow -> {
 
@@ -98,14 +98,14 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     private fun startProfileActivity(){
-        var typeUser = EnumTypeUser.PROFESSIONAL
-        val intent =
-        if(typeUser.equals(EnumTypeUser.CLIENT)) {
-            Intent(this, ClientActivity::class.java)
-        }else{
-            Intent(this, ProfessionalActivity::class.java)
-        }
-        startActivity(intent)
+        //var typeUser = EnumTypeUser.PROFESSIONAL
+        //val intent =
+        //if(typeUser.equals(EnumTypeUser.CLIENT)) {
+
+        //}else{
+        //    Intent(this, ProfessionalActivity::class.java)
+        //}
+        startActivity(Intent(this, ClientActivity::class.java))
     }
 
     private fun includeFragment(){
