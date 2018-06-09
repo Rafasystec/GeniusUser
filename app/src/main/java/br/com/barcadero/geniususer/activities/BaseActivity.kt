@@ -4,6 +4,10 @@ import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.view.View
 import br.com.barcadero.geniususer.util.ShowCaseViewUtil
 import org.jetbrains.annotations.Nullable
 
@@ -23,5 +27,13 @@ open class BaseActivity: AppCompatActivity() {
         }
         fm.add(containerViewId, fragment,title)
         fm.commit()
+    }
+
+    protected fun defaultRecycleView(resId:Int): RecyclerView {
+        var recycleView = this.findViewById<RecyclerView>(resId)
+        recycleView?.layoutManager = LinearLayoutManager(this)
+        recycleView?.itemAnimator = DefaultItemAnimator()
+        recycleView?.setHasFixedSize(true)
+        return recycleView
     }
 }

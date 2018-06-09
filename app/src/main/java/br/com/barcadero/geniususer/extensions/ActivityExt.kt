@@ -13,6 +13,9 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import android.content.Context.INPUT_METHOD_SERVICE
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.inputmethod.InputMethodManager
 
 
@@ -75,3 +78,4 @@ fun Activity.hideKeyBoard(){
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }
+

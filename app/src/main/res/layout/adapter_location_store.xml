@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/cvPLocalStore"
+    android:layout_height="100dp"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:padding="5dp"
+    android:background="@color/cardview_light_background"
+    android:layout_marginBottom="5dp"
+    app:cardElevation="3dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="false"
+    card_view:cardConerRadius="2dp"
+    card_view:cardElevation="6dp"
+    android:foreground="?attr/selectableItemBackground"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/ivProfileLocationStore"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="13dp"
+            android:src="@drawable/no_photo_64" />
+
+        <TextView
+            android:id="@+id/tvLocationStoreName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ivProfileLocationStore"
+            android:layout_marginStart="17dp"
+            android:layout_toEndOf="@+id/ivProfileLocationStore"
+            android:text="Local Name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/llPriceService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tvLocationStoreName"
+            android:layout_below="@+id/tvLocationStoreName"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+
+            <ImageView
+                android:id="@+id/ivLocalStoreAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/flag" />
+            <TextView
+                android:id="@+id/tvLocalStoreAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:text="Rua avenida do endereço" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDistanceLocalStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/llPriceService"
+            android:layout_below="@+id/llPriceService"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/ivDistanceLocalStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/map_marker_radius_blue" />
+            <TextView
+                android:id="@+id/tvDistanceLocalStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:text="8 km" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:id="@+id/tvLocalStoreRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                />
+
+            <ImageView
+                android:id="@+id/ivStarRate5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/star_rate_24" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
