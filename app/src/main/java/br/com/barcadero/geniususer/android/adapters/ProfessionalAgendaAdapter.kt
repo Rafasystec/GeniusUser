@@ -7,26 +7,23 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.model.enums.EnumTypeUser
 import br.com.barcadero.geniususer.model.responses.ClientAgendaResponse
-import br.com.transferr.util.Prefes
 import com.squareup.picasso.Picasso
 
 /**
  * Created by Rafael Rocha on 05/06/2018.
  */
-class ClientAgendaAdapter(
+class ProfessionalAgendaAdapter(
         val agendas: List<ClientAgendaResponse>,
-        val onClick: (ClientAgendaResponse) -> Unit) : RecyclerView.Adapter<ClientAgendaAdapter.ProfessionalViewHolder>(){
+        val onClick: (ClientAgendaResponse) -> Unit) : RecyclerView.Adapter<ProfessionalAgendaAdapter.ProfessionalViewHolder>(){
 
-    val typeUser = Prefes.prefsTypeUser
     override fun onBindViewHolder(holder: ProfessionalViewHolder, position: Int) {
         val context = holder.itemView.context
         val agenda  = agendas[position]
         var name: String
         var urlPhoto: String
-        name = agenda.professionalName
-        urlPhoto = agenda.professionalPhotoUrl
+        name = agenda.clientName
+        urlPhoto = agenda.clientPhotoUrl
         holder.tvAgendaClientProfName.text = name
         holder.tvClientAgendaStatus.text = agenda.status
         //Start progressBar
@@ -53,7 +50,7 @@ class ClientAgendaAdapter(
      * Infla o Layout do Adapter e retorna a Holder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfessionalViewHolder{
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_client_agenda,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_professional_agenda,parent,false)
         return ProfessionalViewHolder(view)
     }
 

@@ -62,7 +62,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.action_settings -> return true
+            R.id.action_settings -> return startMenuStoreLocationActivity()
             else -> return super.onOptionsItemSelected(item)
         }
     }
@@ -73,11 +73,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 startProfileActivity()
             }
             R.id.nav_my_agenda -> {
-                //if(typeUser.equals(EnumTypeUser.CLIENT)) {
-                    startMyAgendaClientActivity()
-                //}else{
-                //    startMyAgendaProfessionalActivity()
-                //}
+                startMyAgendaClientActivity()
             }
             R.id.nav_slideshow -> {
 
@@ -98,13 +94,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     private fun startProfileActivity(){
-        //var typeUser = EnumTypeUser.PROFESSIONAL
-        //val intent =
-        //if(typeUser.equals(EnumTypeUser.CLIENT)) {
-
-        //}else{
-        //    Intent(this, ProfessionalActivity::class.java)
-        //}
         startActivity(Intent(this, ClientActivity::class.java))
     }
 
@@ -130,9 +119,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         startActivity(intent)
     }
 
-    private fun startMyAgendaProfessionalActivity(){
-        val intent = Intent(this,ProfessionalAgendaActivity::class.java)
-        startActivity(intent)
+    private fun startMenuStoreLocationActivity():Boolean{
+        startActivity(Intent(this,LocationStoreActivity::class.java))
+        return true
     }
 
 }

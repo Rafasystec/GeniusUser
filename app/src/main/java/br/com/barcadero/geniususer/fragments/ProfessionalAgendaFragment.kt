@@ -12,6 +12,7 @@ import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.activities.ProfessionalAgendaActivity
 import br.com.barcadero.geniususer.activities.ProfessionalAgendaDetailsActivity
 import br.com.barcadero.geniususer.android.adapters.ClientAgendaAdapter
+import br.com.barcadero.geniususer.android.adapters.ProfessionalAgendaAdapter
 import br.com.barcadero.geniususer.extensions.defaultRecycleView
 import br.com.barcadero.geniususer.model.responses.ClientAgendaResponse
 
@@ -47,7 +48,7 @@ class ProfessionalAgendaFragment : Fragment() {
             clientName="Juliana Moreira da Rocha"
             clientPhotoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnkZsz6_S7yr7AwceGvx62k2Km2bhWHEx8CaEgLb9_TwdKqobDgA"
         }
-        recycleView?.adapter = ClientAgendaAdapter(listOf(agendaClient),onClick = {startAgendaProfessionalDetails(agendaClient)})
+        recycleView?.adapter = ProfessionalAgendaAdapter(listOf(agendaClient),onClick = {startAgendaProfessionalDetails(agendaClient)})
     }
 
     fun startAgendaProfessionalDetails(agendaResponse: ClientAgendaResponse){

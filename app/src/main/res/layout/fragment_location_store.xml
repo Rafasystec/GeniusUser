@@ -1,0 +1,355 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.barcadero.geniususer.fragments.LocationStoreFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aqui temos pontos onde são oferecidos serviços"
+            />
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:id="@+id/cabinetmaker"
+            android:layout_height="@dimen/chooseServiceHeight"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/cardview_light_background"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            card_view:cardConerRadius="2dp"
+            card_view:cardElevation="6dp"
+
+
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/imageView2"
+                    android:layout_marginStart="23dp"
+                    android:src="@drawable/car_wash" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageView"
+                    android:layout_marginStart="28dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:text="Lava-jato"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/arrow_right_drop_circle_outline"
+                    android:id="@+id/imageView2" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:id="@+id/cvHairSalon"
+            android:layout_height="@dimen/chooseServiceHeight"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/cardview_light_background"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            card_view:cardConerRadius="2dp"
+            card_view:cardElevation="6dp"
+
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivHairSalon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignBottom="@+id/imageViewArrowHair"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:src="@drawable/hair_salon" />
+
+                <TextView
+                    android:id="@+id/textViewHair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ivHairSalon"
+                    android:layout_marginStart="28dp"
+                    android:layout_toEndOf="@+id/ivHairSalon"
+                    android:text="Salões de Beleza"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewArrowHair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/arrow_right_drop_circle_outline" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:id="@+id/cvDrilling"
+            android:layout_height="@dimen/chooseServiceHeight"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/cardview_light_background"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            card_view:cardConerRadius="2dp"
+            card_view:cardElevation="6dp"
+
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivDrilling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignBottom="@+id/imageViewArrowDrilling"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:src="@drawable/tire" />
+
+                <TextView
+                    android:id="@+id/textViewDrilling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ivDrilling"
+                    android:layout_marginStart="28dp"
+                    android:layout_toEndOf="@+id/ivDrilling"
+                    android:text="Borracharias"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewArrowDrilling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/arrow_right_drop_circle_outline" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:id="@+id/cvWorkshop"
+            android:layout_height="@dimen/chooseServiceHeight"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/cardview_light_background"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            card_view:cardConerRadius="2dp"
+            card_view:cardElevation="6dp"
+
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivWorkshop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignBottom="@+id/imageViewArrowWorkshop"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:src="@drawable/mechanism_office" />
+
+                <TextView
+                    android:id="@+id/textViewWorkshop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ivWorkshop"
+                    android:layout_marginStart="28dp"
+                    android:layout_toEndOf="@+id/ivWorkshop"
+                    android:text="Oficinas"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewArrowWorkshop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/arrow_right_drop_circle_outline" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:id="@+id/cvPetShop"
+            android:layout_height="@dimen/chooseServiceHeight"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/cardview_light_background"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            card_view:cardConerRadius="2dp"
+            card_view:cardElevation="6dp"
+
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivPetShop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignBottom="@+id/imageViewArrowPetShop"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:src="@drawable/footprint" />
+
+                <TextView
+                    android:id="@+id/textViewPetShop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ivPetShop"
+                    android:layout_marginStart="28dp"
+                    android:layout_toEndOf="@+id/ivPetShop"
+                    android:text="PetShop e Veterinária"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewArrowPetShop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/arrow_right_drop_circle_outline" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:id="@+id/cvNursery"
+            android:layout_height="@dimen/chooseServiceHeight"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/cardview_light_background"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            card_view:cardConerRadius="2dp"
+            card_view:cardElevation="6dp"
+
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivNursery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignBottom="@+id/imageViewArrowNursery"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:src="@drawable/colouring" />
+
+                <TextView
+                    android:id="@+id/textViewNursery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ivNursery"
+                    android:layout_marginStart="28dp"
+                    android:layout_toEndOf="@+id/ivNursery"
+                    android:text="Escolas e Creches"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewArrowNursery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/arrow_right_drop_circle_outline" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</FrameLayout>
