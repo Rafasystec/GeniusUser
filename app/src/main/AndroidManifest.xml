@@ -73,7 +73,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.LocationStoreActivity" />
         <activity android:name=".activities.LocationStoreListActivity" />
-        <activity android:name=".activities.TestActivity"></activity>
+        <activity android:name=".activities.TestActivity" />
+        <activity android:name=".activities.LocationStoreDetailsActivity"></activity>
     </application>
 
 </manifest>

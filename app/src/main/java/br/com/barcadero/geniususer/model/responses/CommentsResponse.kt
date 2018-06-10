@@ -3,7 +3,7 @@ package br.com.barcadero.geniususer.model.responses
 /**
  * Created by idoctor on 06/06/2018.
  */
-class CommentsProfessionalResponse {
+class CommentsResponse {
     var photoClient = ""
     var comment = ""
     var idProfessional = 0L

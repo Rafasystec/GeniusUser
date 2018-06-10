@@ -1,7 +1,6 @@
 package br.com.barcadero.geniususer.fragments
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
@@ -10,38 +9,33 @@ import android.view.View
 import android.view.ViewGroup
 
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.activities.SeeProfessionalAgendaActivity
 import br.com.barcadero.geniususer.android.adapters.ProfessionalCommentsAdapter
 import br.com.barcadero.geniususer.extensions.defaultRecycleView
-import br.com.barcadero.geniususer.extensions.showDialog
 import br.com.barcadero.geniususer.model.responses.CommentsResponse
-import kotlinx.android.synthetic.main.fragment_comments_to_professional.*
 
 
 /**
  * A simple [Fragment] subclass.
  */
-class CommentsToProfessionalFragment : BaseFragment() {
+ class LocationStoreDetailFragment:BaseFragment() {
 
     var recycleView: RecyclerView?=null
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_comments_to_professional, container, false)
-    }
-
+ override fun onCreateView(inflater:LayoutInflater, container:ViewGroup?,
+savedInstanceState:Bundle?):View? {
+ // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_location_store_detail, container, false)
+}
     override fun onResume() {
         super.onResume()
-        loadProfessionalComments()
+        loadLocationStoreComments()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recycleView = defaultRecycleView(view,R.id.rcProfessionalComments)
-        btnScheduleNow.setOnClickListener { startSchedulerActivity() }
+        recycleView = defaultRecycleView(view,R.id.rcLocalStoreComments)
     }
 
-    private fun loadProfessionalComments() {
+    private fun loadLocationStoreComments() {
         var comment = CommentsResponse()
         comment.photoClient = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVLJS2iYiIg0sKLBPWpnWRlhZd6xdNe2B8vGts1WDLQ5nWeBMv"
         comment.clientName = "Raul Gomes"
@@ -56,7 +50,7 @@ class CommentsToProfessionalFragment : BaseFragment() {
         comment1.clientName = "Giovana Araújo"
         comment1.comment =
                 "Este trecho é parte de conteúdo que pode ser compartilhado utilizando o link http://www.valor.com.br/politica/5576627/duro-em-materias-penais-barroso-e-formador-de-maiorias-no-stf?origem=G1&utm_source=g1.globo.com&utm_medium=referral&utm_campaign=materia ou as ferramentas oferecidas na página. \n" +
-                "Textos, fotos, artes e vídeos do Valor estão protegidos pela legislação brasileira sobre direito autoral. Não reproduza o conteúdo do jornal em qualquer meio de comunicação, eletrônico ou impresso, sem autorização do Valor (falecom@valor.com.br). Essas regras têm como objetivo proteger o investimento que o Valor faz na qualidade de seu jornalismo."
+                        "Textos, fotos, artes e vídeos do Valor estão protegidos pela legislação brasileira sobre direito autoral. Não reproduza o conteúdo do jornal em qualquer meio de comunicação, eletrônico ou impresso, sem autorização do Valor (falecom@valor.com.br). Essas regras têm como objetivo proteger o investimento que o Valor faz na qualidade de seu jornalismo."
         comment1.idClient = 1L
         comment1.commentDate = "06/06/2018 as 17:08"
         comment1.idProfessional = 3L
@@ -75,13 +69,8 @@ class CommentsToProfessionalFragment : BaseFragment() {
         recycleView?.adapter = ProfessionalCommentsAdapter(list,{comment : CommentsResponse -> onCommentClick(comment)})
     }
 
-    private fun onCommentClick(comment: CommentsResponse){
-        showDialog(activity!!, comment.comment, comment.clientName)
-    }
+    fun onCommentClick(commentsProfessionalResponse: CommentsResponse){
 
-    fun startSchedulerActivity(){
-        var intent = Intent(activity,SeeProfessionalAgendaActivity::class.java)
-        startActivity(intent)
     }
 
 }// Required empty public constructor

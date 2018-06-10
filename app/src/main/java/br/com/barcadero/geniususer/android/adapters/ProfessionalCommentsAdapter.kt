@@ -1,7 +1,6 @@
 package br.com.barcadero.geniususer.android.adapters
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
@@ -11,15 +10,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.model.responses.CommentsProfessionalResponse
+import br.com.barcadero.geniususer.model.responses.CommentsResponse
 import com.squareup.picasso.Picasso
 
 /**
  * Created by Rafael Rocha on 05/06/2018.
  */
 class ProfessionalCommentsAdapter(
-        val professionalComments: List<CommentsProfessionalResponse>,
-        val onClick: (CommentsProfessionalResponse) -> Unit) : RecyclerView.Adapter<ProfessionalCommentsAdapter.ProfessionalViewHolder>(){
+        val professionalComments: List<CommentsResponse>,
+        val onClick: (CommentsResponse) -> Unit) : RecyclerView.Adapter<ProfessionalCommentsAdapter.ProfessionalViewHolder>(){
 
     @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: ProfessionalViewHolder, position: Int) {
