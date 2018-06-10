@@ -15,13 +15,9 @@ class LocationStoreListActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location_store_list)
-        //recycleView = defaultRecycleView(R.id.rcLocalStore)
+        recycleView = defaultRecycleView(R.id.rcLocalStore)
     }
 
-    override fun onCreateView(parent: View?, name: String?, context: Context?, attrs: AttributeSet?): View {
-
-        return super.onCreateView(parent, name, context, attrs)
-    }
 
     override fun onResume() {
         super.onResume()
