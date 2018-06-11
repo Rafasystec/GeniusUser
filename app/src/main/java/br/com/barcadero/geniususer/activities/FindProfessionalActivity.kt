@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.fragments.ChooseServiceAreaFragment
 import br.com.barcadero.geniususer.fragments.FindProfessionalFragment
 import br.com.barcadero.geniususer.model.enums.EnumProfessionalArea
 import br.com.barcadero.geniususer.util.PutExtraKeys
+import kotlinx.android.synthetic.main.activity_find_professional.*
+
 
 class FindProfessionalActivity : BaseActivity() {
 
@@ -17,6 +18,10 @@ class FindProfessionalActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_professional)
+        toolbar.title = resources.getString(R.string.choose_professional)
+        setSupportActionBar(toolbar)
+        //supportActionBar?.title = resources.getString(R.string.choose_professional)
+
         var bundle = intent.extras
         if(bundle != null){
             professionalArea = bundle?.get(PutExtraKeys.PROFESSIONAL_AREA) as EnumProfessionalArea

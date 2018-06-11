@@ -7,19 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.TextView
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.model.Professional
 import br.com.barcadero.geniususer.model.responses.ProfessionalResponse
 import com.squareup.picasso.Picasso
 
 /**
  * Created by idoctor on 05/06/2018.
  */
-class ProfessionalAdapter(
+class ClientHistoricAdapter(
         val professionals: List<ProfessionalResponse>,
-        val onClick: (ProfessionalResponse) -> Unit) : RecyclerView.Adapter<ProfessionalAdapter.ProfessionalViewHolder>(){
+        val onClick: (ProfessionalResponse) -> Unit) : RecyclerView.Adapter<ClientHistoricAdapter.ProfessionalViewHolder>(){
 
     override fun onBindViewHolder(holder: ProfessionalViewHolder, position: Int) {
         val context = holder.itemView.context
@@ -73,28 +71,28 @@ class ProfessionalAdapter(
      * Infla o Layout do Adapter e retorna a Holder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfessionalViewHolder{
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_professionals,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_client_historic,parent,false)
         return ProfessionalViewHolder(view)
     }
 
     override fun getItemCount() = this.professionals.size
 
-    private fun setColor(imageView: ImageView, context:Context){
+    private fun setColor(imageView: ImageView, context: Context){
         imageView.setColorFilter(context.resources.getColor(R.color.colorAccentClient))
     }
-    class ProfessionalViewHolder(view:View):RecyclerView.ViewHolder(view){
+    class ProfessionalViewHolder(view: View): RecyclerView.ViewHolder(view){
         var tvName    : TextView
         var tvPrice   : TextView
         var tvDistance: TextView
         var img: ImageView
-        var ivStarRate1:ImageView
-        var ivStarRate2:ImageView
-        var ivStarRate3:ImageView
-        var ivStarRate4:ImageView
-        var ivStarRate5:ImageView
-        var ivFavoritePro:ImageView
+        var ivStarRate1: ImageView
+        var ivStarRate2: ImageView
+        var ivStarRate3: ImageView
+        var ivStarRate4: ImageView
+        var ivStarRate5: ImageView
+        var ivFavoritePro: ImageView
         //var progress:ProgressBar
-        var cardView:CardView
+        var cardView: CardView
         init {
             tvName      = view.findViewById(R.id.tvNameProfessional)
             img         = view.findViewById(R.id.ivProfile)

@@ -2,20 +2,19 @@ package br.com.barcadero.geniususer.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
+import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.fragments.ChooseServiceAreaFragment
-import br.com.barcadero.geniususer.model.enums.EnumTypeUser
-import br.com.transferr.extensions.toast
-import br.com.transferr.util.Prefes
+import br.com.barcadero.geniususer.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -39,8 +38,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         nav_view.setNavigationItemSelectedListener(this)
         includeFragment()
-        //Prefes.prefsTypeUser = EnumTypeUser.PROFESSIONAL
-        //typeUser = Prefes.prefsTypeUser
+        initNavigationBottomMenu()
     }
 
     override fun onBackPressed() {
@@ -122,6 +120,46 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     private fun startMenuStoreLocationActivity():Boolean{
         startActivity(Intent(this,LocationStoreActivity::class.java))
         return true
+    }
+
+    fun initNavigationBottomMenu(){
+        btnNavigationClient.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menuHomeCli -> {
+                    //includeFragment(R.id.frameMainProfessionalAgenda, ProfessionalAgendaFragment())
+                    switchFragment(ChooseServiceAreaFragment())
+                    true
+                }
+                R.id.menuAgendaCli -> {
+                    //includeFragment(R.id.frameMainProfessionalAgenda, ProfessionalAgendaFragment())
+                    switchFragment(ClientAgendaFragment())
+                    true
+                }
+                R.id.menuHistoryCli -> {
+                    //includeFragment(R.id.frameMainProfessionalAgenda, ProfessionalHistoryFragment())
+                    switchFragment(ClientHistoryFragment())
+                    true
+                }
+                R.id.menuMyFavoriteCli -> {
+                    //includeFragment(R.id.frameMainProfessionalAgenda, ProfessionalAgendaFragment())
+                    switchFragment(ClientFavoriteFragment())
+                    true
+                }
+                R.id.menuChartCli -> {
+                    //includeFragment(R.id.frameMainProfessionalAgenda, ProfessionalWorkDoneFragment())
+                    switchFragment(ClientPieChartFragment())
+                    true
+                }
+                else ->{ true}
+            }
+
+        }
+    }
+
+    private fun switchFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.mainFragment, fragment)
+                .commit()
     }
 
 }

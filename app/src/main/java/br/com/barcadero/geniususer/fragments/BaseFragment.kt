@@ -12,6 +12,7 @@ import br.com.transferr.extensions.showError
  */
 open class BaseFragment : Fragment(){
 
+    protected var PLACE_AUTOCOMPLETE_REQUEST_CODE = 1
     fun toast(message:String ,context:FragmentActivity){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }

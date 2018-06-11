@@ -14,6 +14,13 @@
     <color name="bootstrapButtonSuccess">#5cb85c</color>
     <color name="bootstrapButtonSuccessText">#fff</color>
     <color name="snackBarActionColor">#CD7300</color>
+    <color name="selectedItemClient">#FF8C00</color>
+    <color name="UnselectedItemClient">#BDBDBD</color>
+    <color name="colorAccentClient">#FF8C00</color>
+    <color name="colorPrimaryDarkClient">#DF3A01</color>
+    <color name="colorText">#000</color>
+    <color name="colorTextToolbar">#FFF</color>
+
 
 
 </resources>

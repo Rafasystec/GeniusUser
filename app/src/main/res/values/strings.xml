@@ -39,4 +39,26 @@
     <string name="works">Trabalhos</string>
     <string name="more">Mais</string>
     <string name="action_store_location">Locais</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="action_is_new_user">É um novo usuário?</string>
+    <string name="action_enter">Entrar</string>
+    <string name="action_your_address">Seu endereço</string>
+    <string name="nav_agenda">Agenda</string>
+    <string name="nav_favorite">Favoritos</string>
+    <string name="nav_config">Config.</string>
+    <string name="choose_professional">Escolha um profissional</string>
+    <string name="nav_finance">Finanças</string>
 </resources>

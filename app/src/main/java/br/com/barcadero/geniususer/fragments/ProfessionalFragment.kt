@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.model.enums.EnumSexo
 import br.com.barcadero.geniususer.util.TextWatcherUtil
@@ -26,6 +27,7 @@ import kotlinx.android.synthetic.main.fragment_professional.*
 class ProfessionalFragment : BaseFragment() {
 
     var gender:EnumSexo?=null
+    var spGender:Spinner?=null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -124,6 +126,7 @@ class ProfessionalFragment : BaseFragment() {
     }
 
     private fun initSpinnerSexo(){
+        /*
         spSexoBasic.adapter = ArrayAdapter(activity,R.layout.support_simple_spinner_dropdown_item, listOf("Masculino","Feminino"))
         spSexoBasic.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -136,7 +139,20 @@ class ProfessionalFragment : BaseFragment() {
                     EnumSexo.FEMALE
                 }
             }
-        }
+        }*/
+       spGender =  br.com.barcadero.geniususer.extensions.initSpinnerSexo(activity!!)
+       spGender!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+           override fun onNothingSelected(parent: AdapterView<*>?) {
+               TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+           }
+           override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+               gender = if(position == 0){
+                   EnumSexo.MALE
+               }else{
+                   EnumSexo.FEMALE
+               }
+           }
+       }
     }
 
     fun hideSoftKeyboard() {
@@ -145,6 +161,8 @@ class ProfessionalFragment : BaseFragment() {
             inputMethodManager.hideSoftInputFromWindow(activity?.currentFocus!!.windowToken, 0)
         }
     }
+
+
 
 
 

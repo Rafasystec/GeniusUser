@@ -14,4 +14,6 @@ class ProfessionalResponse {
     var longitude:Double?=null
     var latitude:Double?=null
     var professionalArea:EnumProfessionalArea?=null
+    var rate = 0
+    var isFavorite = false
 }

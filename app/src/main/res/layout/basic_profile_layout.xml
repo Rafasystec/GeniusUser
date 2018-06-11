@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     android:orientation="vertical">
     <!-- For the name -->
     <RelativeLayout
@@ -12,21 +13,14 @@
         android:layout_marginRight="8dp"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/ivNameEdit"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="14dp"
-            android:src="@drawable/ic_account_black" />
+
 
         <EditText
             android:id="@+id/etNameProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/ivNameEdit"
-            android:layout_toRightOf="@+id/ivNameEdit"
+
+
             android:clickable="true"
             android:focusable="true"
             android:hint="@string/your_name"
@@ -40,7 +34,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center">
-
+        <!--
         <ImageView
             android:id="@+id/ivEmailEdit"
             android:layout_width="25dp"
@@ -48,14 +42,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="14dp"
-            android:src="@drawable/ic_at_black" />
+             />
+             -->
 
         <EditText
             android:id="@+id/etEmailProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/ivEmailEdit"
-            android:layout_toRightOf="@+id/ivEmailEdit"
             android:clickable="false"
             android:focusable="false"
             android:hint="@string/your_email"
@@ -79,7 +72,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center">
-
+        <!--
         <ImageView
             android:id="@+id/ivBirthDate"
             android:layout_width="25dp"
@@ -88,12 +81,11 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="12dp"
             android:src="@drawable/ic_calendar_check_black" />
-
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/ivBirthDate"
-            android:layout_toRightOf="@+id/ivBirthDate"
+
             android:orientation="horizontal"
             android:paddingLeft="5dp"
             >

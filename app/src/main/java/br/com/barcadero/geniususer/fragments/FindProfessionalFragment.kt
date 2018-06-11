@@ -62,6 +62,8 @@ class FindProfessionalFragment : BaseFragment(){
         professional.id=1L
         professional.name="Gilberto Lira"
         professional.value="R$ 80,00"
+        professional.rate = 5
+        professional.isFavorite = true
 
         var professional2 = ProfessionalResponse()
         professional2.urlPhoto= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7u5Dj3Tz7p07cLDeN7uMR2sKdjfwEoUSEnexvV1p3RA95QPZAw"
@@ -69,6 +71,7 @@ class FindProfessionalFragment : BaseFragment(){
         professional2.id=2L
         professional2.name="Luis Brito"
         professional2.value="R$ 150,00"
+        professional2.rate = 3
 
         var professional3 = ProfessionalResponse()
         professional3.urlPhoto= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSdL1s1tMcbRkQm2VhwJUVrKmFTAqm4FprzAtAMONpZVTkFjFPlA"
@@ -76,6 +79,7 @@ class FindProfessionalFragment : BaseFragment(){
         professional3.id=3L
         professional3.name="Carlos Aires Brito"
         professional3.value="R$ 350,00"
+        professional3.rate = 2
 
         var professional4 = ProfessionalResponse()
         professional4.urlPhoto= "https://media.glamour.com/photos/58f90f25510a907b04e2cfd9/master/w_1280,c_limit/meredithgolden.jpg"
@@ -83,6 +87,7 @@ class FindProfessionalFragment : BaseFragment(){
         professional4.id=4L
         professional4.name="Elena Santiago"
         professional4.value="R$ 200,00"
+        professional4.rate = 2
 
         var professional5 = ProfessionalResponse()
         professional5.urlPhoto= "http://redmondphotography.com/wp-content/uploads/2018/02/Parsons-710-800x600.jpg"
@@ -90,6 +95,7 @@ class FindProfessionalFragment : BaseFragment(){
         professional5.id=5L
         professional5.name="Renata Almeida"
         professional5.value="R$ 200,00"
+        professional5.rate = 0
 
         this.professionals = listOf(professional,professional2,professional3,professional4,professional5)
         this.recycleView?.adapter = ProfessionalAdapter(this.professionals,{professional: ProfessionalResponse -> startCommentActivity()})
