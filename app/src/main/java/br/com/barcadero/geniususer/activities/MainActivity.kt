@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
 import br.com.barcadero.geniususer.R
@@ -25,7 +26,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Algum problema ou sujestão?", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, Html.fromHtml("<font color=\"#ffffff\">${resources.getString(R.string.do_you_have_question_or_sugestion)}"), Snackbar.LENGTH_LONG)
                     .setAction("Sim", {startContactUsActivity()})
                     .setActionTextColor(ContextCompat.getColor(this,R.color.snackBarActionColor))
                     .show()

@@ -61,4 +61,14 @@
     <string name="nav_config">Config.</string>
     <string name="choose_professional">Escolha um profissional</string>
     <string name="nav_finance">Finanças</string>
+    <string name="area_woodwork">Marcenaria</string>
+    <string name="area_air_conditioning">Ar Condicionado</string>
+    <string name="area_eletrical">Eletrica</string>
+    <string name="area_diarist">Diarista</string>
+    <string name="area_brickwork">Alvenaria e Acabamento</string>
+    <string name="area_painting">Pintura</string>
+    <string name="area_mechanics">Mecânica e Funilaria</string>
+    <string name="area_unknow">Não informada</string>
+    <string name="do_you_have_question_or_sugestion">Dúvida ou segestão?</string>
+    <string name="end_page">FIM</string>
 </resources>

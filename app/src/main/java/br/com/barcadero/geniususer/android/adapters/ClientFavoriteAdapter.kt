@@ -10,15 +10,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.model.responses.ClientHistoricResponse
-import br.com.barcadero.geniususer.model.responses.ProfessionalResponse
 import com.squareup.picasso.Picasso
 
 /**
  * Created by idoctor on 05/06/2018.
  */
-class ClientHistoricAdapter(
+class ClientFavoriteAdapter(
         val professionals: List<ClientHistoricResponse>,
-        val onClick: (ClientHistoricResponse) -> Unit) : RecyclerView.Adapter<ClientHistoricAdapter.ProfessionalViewHolder>(){
+        val onClick: (ClientHistoricResponse) -> Unit) : RecyclerView.Adapter<ClientFavoriteAdapter.ProfessionalViewHolder>(){
 
     override fun onBindViewHolder(holder: ProfessionalViewHolder, position: Int) {
         val context = holder.itemView.context

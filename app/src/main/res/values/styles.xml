@@ -42,6 +42,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:textColor">@color/colorText</item>
+        <item name="android:actionBarStyle">@style/AppClientTheme.ActionBarStyle</item>
     </style>
     <style name="AppClientTheme.Toolbar" parent="AppClientTheme">
         <item name="android:textColor">@color/colorText</item>
@@ -49,5 +50,11 @@
     </style>
     <style name="ImageViewClient">
         <item name="android:tint">@color/colorAccentClient</item>
+    </style>
+    <style name="AppClientTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/AppClientTheme.ActionBar.TitleTextStyle</item>
+    </style>
+    <style name="AppClientTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
     </style>
 </resources>
