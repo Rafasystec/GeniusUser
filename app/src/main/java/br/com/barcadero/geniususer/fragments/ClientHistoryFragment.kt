@@ -19,14 +19,14 @@ import br.com.barcadero.geniususer.model.responses.ClientHistoricResponse
 /**
  * A simple [Fragment] subclass.
  */
-class ClientHistoryFragment : Fragment() {
+class ClientHistoryFragment : BaseFragment() {
 
 
     var recycleView:RecyclerView?=null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+        setTitleBarForClient(R.string.title_activity_client_historic)
         return inflater.inflate(R.layout.fragment_client_history, container, false)
     }
 

@@ -54,6 +54,7 @@
 
         <activity
             android:name=".activities.MapsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_maps" />
         <activity android:theme="@style/AppClientTheme" android:name=".activities.CommentsToProfessionalActivity" />
         <activity android:name=".activities.SeeProfessionalAgendaActivity" />
@@ -63,7 +64,7 @@
         <activity android:name=".activities.ReadQRCodeActivity" />
         <activity android:name=".activities.ProfessionalAgendaActivity" />
         <activity android:name=".activities.ProfessionalAgendaDetailsActivity" />
-        <activity android:name=".activities.MainProfessionalActivity" />
+        <activity android:theme="@style/AppProfessionalTheme" android:name=".activities.MainProfessionalActivity" />
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">

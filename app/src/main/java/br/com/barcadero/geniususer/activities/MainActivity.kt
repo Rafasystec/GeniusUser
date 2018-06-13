@@ -24,6 +24,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        supportActionBar?.title = resources.getString(R.string.home)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, Html.fromHtml("<font color=\"#ffffff\">${resources.getString(R.string.do_you_have_question_or_sugestion)}"), Snackbar.LENGTH_LONG)
@@ -161,6 +162,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         supportFragmentManager.beginTransaction()
                 .replace(R.id.mainFragment, fragment)
                 .commit()
+    }
+
+    fun setActionBarTitle(title: String) {
+        supportActionBar!!.title = title
     }
 
 }

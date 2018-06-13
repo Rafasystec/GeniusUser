@@ -9,18 +9,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.barcadero.geniususer.R
-import br.com.barcadero.geniususer.model.responses.ClientHistoricResponse
+import br.com.barcadero.geniususer.model.responses.ClientFavoriteResponse
 import com.squareup.picasso.Picasso
+import org.jetbrains.anko.toast
 
 /**
  * Created by idoctor on 05/06/2018.
  */
 class ClientFavoriteAdapter(
-        val professionals: List<ClientHistoricResponse>,
-        val onClick: (ClientHistoricResponse) -> Unit) : RecyclerView.Adapter<ClientFavoriteAdapter.ProfessionalViewHolder>(){
-
+        val professionals: List<ClientFavoriteResponse>,
+        val onClick: (ClientFavoriteResponse) -> Unit) : RecyclerView.Adapter<ClientFavoriteAdapter.ProfessionalViewHolder>(){
+    var context:Context?=null
     override fun onBindViewHolder(holder: ProfessionalViewHolder, position: Int) {
         val context = holder.itemView.context
+        this.context = context
         val professional = professionals[position]
         holder.tvName.text      = professional.professionalName
         holder.tvPrice.text     = professional.value
@@ -64,7 +66,9 @@ class ClientFavoriteAdapter(
                     }
 
                 })
+        holder
         holder.itemView.setOnClickListener { onClick(professional) }
+        holder.ivFavoritePro.setOnClickListener { onFavoriteClick(professional) }
 
     }
 
@@ -72,7 +76,7 @@ class ClientFavoriteAdapter(
      * Infla o Layout do Adapter e retorna a Holder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfessionalViewHolder{
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_client_historic,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_favorite_historic,parent,false)
         return ProfessionalViewHolder(view)
     }
 
@@ -107,5 +111,9 @@ class ClientFavoriteAdapter(
             ivFavoritePro    = view.findViewById(R.id.ivFavoritePro)
             tvCliHistoricAreaPro    = view.findViewById(R.id.tvCliHistoricAreaPro)
         }
+    }
+
+    fun onFavoriteClick(professional:ClientFavoriteResponse){
+        context?.toast("Deseja Tirá-lo(a) dos Favoritos?${professional.professionalName}")
     }
 }

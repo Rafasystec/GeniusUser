@@ -20,12 +20,13 @@ import kotlinx.android.synthetic.main.fragment_choose_service_area.*
 /**
  * A simple [Fragment] subclass.
  */
-class ChooseServiceAreaFragment : Fragment() {
+class ChooseServiceAreaFragment : BaseFragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        setTitleBarForClient(R.string.title_activity_client_home)
         return inflater.inflate(R.layout.fragment_choose_service_area, container, false)
     }
 

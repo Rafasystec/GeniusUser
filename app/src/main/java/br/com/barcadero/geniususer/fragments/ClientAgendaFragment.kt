@@ -11,6 +11,7 @@ import android.view.ViewGroup
 
 import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.activities.ClientAgendaDetailsActivity
+import br.com.barcadero.geniususer.activities.MainActivity
 import br.com.barcadero.geniususer.android.adapters.ClientAgendaAdapter
 import br.com.barcadero.geniususer.extensions.defaultRecycleView
 import br.com.barcadero.geniususer.model.responses.ClientAgendaResponse
@@ -26,11 +27,13 @@ class ClientAgendaFragment : BaseFragment() {
     var recycleView:RecyclerView?=null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        setTitleBarForClient(R.string.title_activity_client_agenda)
         return inflater.inflate(R.layout.fragment_client_agenda, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         recycleView = defaultRecycleView(view,R.id.rcClientAgenda)
     }
 

@@ -29,7 +29,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@drawable/businessman_128"
+                android:src="@drawable/businessman_128_purple"
+
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -51,12 +52,13 @@
                 android:id="@+id/ivDecisionClient"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/men_128_2"
+                android:src="@drawable/male_user_128_light_orange"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sou Cliente"
+                android:textColor="@color/colorPrimaryDarkClient"
+                android:text="@string/i_m_client"
                 android:textStyle="bold"
                 />
         </LinearLayout>

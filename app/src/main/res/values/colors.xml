@@ -20,7 +20,10 @@
     <color name="colorPrimaryDarkClient">#DF3A01</color>
     <color name="colorText">#000</color>
     <color name="colorTextToolbar">#FFF</color>
-
+ <!-- For Professional theme -->
+    <color name="colorAccentPro">#5B00FF</color>
+    <color name="colorPrimaryDarkPro">#9800FF</color>
+    <color name="colorPrimaryPro">#CE00FF</color>
 
 
 </resources>

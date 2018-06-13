@@ -71,4 +71,11 @@
     <string name="area_unknow">Não informada</string>
     <string name="do_you_have_question_or_sugestion">Dúvida ou segestão?</string>
     <string name="end_page">FIM</string>
+    <string name="title_activity_client_agenda">Sua Agenda</string>
+    <string name="title_activity_client_home">Início</string>
+    <string name="title_activity_client_historic">Seu Histórico</string>
+    <string name="title_activity_client_favorite">Seus Favoritos</string>
+    <string name="title_activity_client_financial">Financeiro</string>
+    <string name="i_m_client">Sou Cliente</string>
+    <string name="wellcome">Bem-vindo</string>
 </resources>

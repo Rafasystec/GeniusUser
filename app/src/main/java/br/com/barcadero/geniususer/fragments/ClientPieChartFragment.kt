@@ -12,7 +12,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
 import br.com.barcadero.geniususer.R
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.components.Legend
@@ -26,13 +25,13 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.github.mikephil.charting.utils.MPPointF
 import kotlinx.android.synthetic.main.fragment_client_pie_chart.*
-import java.util.ArrayList
+import java.util.*
 
 
 /**
  * A simple [Fragment] subclass.
  */
-class ClientPieChartFragment : Fragment(), OnChartValueSelectedListener {
+class ClientPieChartFragment : BaseFragment(), OnChartValueSelectedListener {
     override fun onNothingSelected() {
         Log.i("PieChart", "nothing selected")
     }
@@ -59,7 +58,7 @@ class ClientPieChartFragment : Fragment(), OnChartValueSelectedListener {
     var mTfLight: Typeface?=null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+        setTitleBarForClient(R.string.title_activity_client_financial)
         return inflater.inflate(R.layout.fragment_client_pie_chart, container, false)
     }
 

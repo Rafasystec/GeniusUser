@@ -86,6 +86,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
+            android:clickable="true"
             android:src="@drawable/favorite_heart"
             android:tint="@android:color/holo_red_light" />
         <LinearLayout

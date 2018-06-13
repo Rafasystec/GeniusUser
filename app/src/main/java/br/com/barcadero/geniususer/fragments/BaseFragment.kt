@@ -2,9 +2,12 @@ package br.com.barcadero.geniususer.fragments
 
 import android.app.Activity
 import android.content.Context
+import android.support.annotation.IdRes
+import android.support.annotation.StringRes
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.widget.Toast
+import br.com.barcadero.geniususer.activities.MainActivity
 import br.com.transferr.extensions.showError
 
 /**
@@ -15,5 +18,15 @@ open class BaseFragment : Fragment(){
     protected var PLACE_AUTOCOMPLETE_REQUEST_CODE = 1
     fun toast(message:String ,context:FragmentActivity){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    protected fun setTitleBarForClient(title:String){
+        (activity as MainActivity)
+                .setActionBarTitle(title)
+    }
+
+    protected fun setTitleBarForClient(@StringRes id:Int){
+        (activity as MainActivity)
+                .setActionBarTitle(activity?.resources?.getString(id)!!)
     }
 }
