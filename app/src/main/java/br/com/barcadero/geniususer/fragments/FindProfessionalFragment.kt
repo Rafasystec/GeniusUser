@@ -4,8 +4,6 @@ package br.com.barcadero.geniususer.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -16,9 +14,12 @@ import br.com.barcadero.geniususer.R
 import br.com.barcadero.geniususer.activities.CommentsToProfessionalActivity
 import br.com.barcadero.geniususer.android.adapters.ProfessionalAdapter
 import br.com.barcadero.geniususer.extensions.defaultRecycleView
+import br.com.barcadero.geniususer.interfaces.OnResponseInterface
 import br.com.barcadero.geniususer.model.enums.EnumProfessionalArea
+import br.com.barcadero.geniususer.model.objects.Filter
 import br.com.barcadero.geniususer.model.responses.ProfessionalResponse
 import br.com.barcadero.geniususer.util.PutExtraKeys
+import br.com.barcadero.geniususer.webservices.ProfessionalWS
 import br.com.transferr.extensions.log
 import kotlinx.android.synthetic.main.fragment_find_professional.*
 
@@ -52,10 +53,11 @@ class FindProfessionalFragment : BaseFragment(){
 
     override fun onResume() {
         super.onResume()
-        loadProfessionals()
+        //loadProfessionals()
     }
 
-    private fun loadProfessionals(){
+    private fun loadProfessionals(professionals:List<ProfessionalResponse>){
+        /*
         var professional = ProfessionalResponse()
         professional.urlPhoto= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtTG0j1MmEng29JZuTbH7KqM55WOrUD7XfxtzOseyZeuFWJPv7"
         professional.distance="5,6 km"
@@ -96,8 +98,8 @@ class FindProfessionalFragment : BaseFragment(){
         professional5.name="Renata Almeida"
         professional5.value="R$ 200,00"
         professional5.rate = 0
-
-        this.professionals = listOf(professional,professional2,professional3,professional4,professional5)
+        */
+        this.professionals = professionals//listOf(professional,professional2,professional3,professional4,professional5)
         this.recycleView?.adapter = ProfessionalAdapter(this.professionals,{professional: ProfessionalResponse -> startCommentActivity()})
     }
 
@@ -155,5 +157,26 @@ class FindProfessionalFragment : BaseFragment(){
     fun startCommentActivity(){
         var intent = Intent(activity,CommentsToProfessionalActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun getCarFromWebService(filter:Filter){
+        ProfessionalWS.getByFilter(filter,
+                object: OnResponseInterface<List<ProfessionalResponse>> {
+                    override fun onSuccess(body: List<ProfessionalResponse>?) {
+                        loadProfessionals(body!!)
+                    }
+
+                    override fun onError(message: String) {
+                        alertWarning(message)
+                    }
+
+                    override fun onFailure(t: Throwable?) {
+                        alertErro(t?.message!!)
+                    }
+
+
+                }
+        )
+
     }
 }// Required empty public constructor

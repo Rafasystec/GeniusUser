@@ -1,14 +1,13 @@
 package br.com.barcadero.geniususer.fragments
 
-import android.app.Activity
-import android.content.Context
-import android.support.annotation.IdRes
 import android.support.annotation.StringRes
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.widget.Toast
 import br.com.barcadero.geniususer.activities.MainActivity
-import br.com.transferr.extensions.showError
+import br.com.barcadero.geniususer.util.AlertUtil
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.okButton
 
 /**
  * Created by Rafael Rocha on 05/06/2018.
@@ -28,5 +27,23 @@ open class BaseFragment : Fragment(){
     protected fun setTitleBarForClient(@StringRes id:Int){
         (activity as MainActivity)
                 .setActionBarTitle(activity?.resources?.getString(id)!!)
+    }
+
+    protected fun alertErro(message: String){
+        activity!!.alert ( message,AlertUtil.DEFAULT_ERROR_TITLE){
+            okButton { it.dismiss() }
+        }.show()
+    }
+
+    protected fun alertWarning(message: String){
+        activity!!.alert ( message,AlertUtil.DEFAULT_VALIDATE_TITLE){
+            okButton { it.dismiss() }
+        }.show()
+    }
+
+    protected fun alertSuccess(message: String){
+        activity!!.alert ( message,AlertUtil.DEFAULT_VALIDATE_TITLE){
+            okButton { it.dismiss() }
+        }.show()
     }
 }
